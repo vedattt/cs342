@@ -2,6 +2,9 @@ ubuntu-server-img
 
 hw??/2200*.tar.gz
 hw??/2200*/**
+hw??/obj/**
+
+hw01/tree
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
