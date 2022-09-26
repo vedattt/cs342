@@ -1,0 +1,889 @@
+execve("/usr/bin/man", ["man", "strace"], 0x7ffc4a6a9bb8 /* 37 vars */) = 0
+brk(NULL)                               = 0x555f30442000
+arch_prctl(0x3001 /* ARCH_??? */, 0x7ffe34229760) = -1 EINVAL (Invalid argument)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f490f22c000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/glibc-hwcaps/x86-64-v3/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/glibc-hwcaps/x86-64-v3", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/glibc-hwcaps/x86-64-v2/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/glibc-hwcaps/x86-64-v2", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/tls/haswell/x86_64/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/tls/haswell/x86_64", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/tls/haswell/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/tls/haswell", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/tls/x86_64/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/tls/x86_64", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/tls/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/tls", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/haswell/x86_64/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/haswell/x86_64", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/haswell/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/haswell", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/x86_64/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/man-db/x86_64", 0x7ffe34228990, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/libmandb-2.10.2.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=30504, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 33072, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490f223000
+mprotect(0x7f490f225000, 20480, PROT_NONE) = 0
+mmap(0x7f490f225000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f490f225000
+mmap(0x7f490f228000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f490f228000
+mmap(0x7f490f22a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7f490f22a000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/man-db/libman-2.10.2.so", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=196744, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 199712, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490f1f2000
+mprotect(0x7f490f1fc000, 151552, PROT_NONE) = 0
+mmap(0x7f490f1fc000, 110592, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f490f1fc000
+mmap(0x7f490f217000, 36864, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f490f217000
+mmap(0x7f490f221000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2e000) = 0x7f490f221000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/man-db/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125419, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 125419, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f490f1d3000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=100184, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 102416, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490f1b9000
+mmap(0x7f490f1bc000, 57344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f490f1bc000
+mmap(0x7f490f1ca000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f490f1ca000
+mmap(0x7f490f1d1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17000) = 0x7f490f1d1000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/man-db/libpipeline.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libpipeline.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=46784, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 49608, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490f1ac000
+mmap(0x7f490f1af000, 24576, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f490f1af000
+mmap(0x7f490f1b5000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9000) = 0x7f490f1b5000
+mmap(0x7f490f1b7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa000) = 0x7f490f1b7000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/man-db/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P4\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=1953472, ...}, AT_EMPTY_PATH) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 1994384, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490efc5000
+mmap(0x7f490efe7000, 1421312, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x22000) = 0x7f490efe7000
+mmap(0x7f490f142000, 356352, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x17d000) = 0x7f490f142000
+mmap(0x7f490f199000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d4000) = 0x7f490f199000
+mmap(0x7f490f19f000, 52880, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f490f19f000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/man-db/libgdbm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/man-db/libgdbm.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libgdbm.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 @\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=71648, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 73784, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490efb2000
+mmap(0x7f490efb6000, 40960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4000) = 0x7f490efb6000
+mmap(0x7f490efc0000, 12288, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7f490efc0000
+mmap(0x7f490efc3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7f490efc3000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f490efb0000
+openat(AT_FDCWD, "/usr/lib/man-db/libseccomp.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libseccomp.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=124744, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 127072, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f490ef90000
+mprotect(0x7f490ef92000, 114688, PROT_NONE) = 0
+mmap(0x7f490ef92000, 57344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f490ef92000
+mmap(0x7f490efa0000, 53248, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x10000) = 0x7f490efa0000
+mmap(0x7f490efae000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1d000) = 0x7f490efae000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f490ef8d000
+arch_prctl(ARCH_SET_FS, 0x7f490ef8d740) = 0
+set_tid_address(0x7f490ef8da10)         = 16586
+set_robust_list(0x7f490ef8da20, 24)     = 0
+rseq(0x7f490ef8e060, 0x20, 0, 0x53053053) = 0
+mprotect(0x7f490f199000, 16384, PROT_READ) = 0
+mprotect(0x7f490efae000, 4096, PROT_READ) = 0
+mprotect(0x7f490efc3000, 4096, PROT_READ) = 0
+mprotect(0x7f490f1b7000, 4096, PROT_READ) = 0
+mprotect(0x7f490f1d1000, 4096, PROT_READ) = 0
+mprotect(0x7f490f221000, 4096, PROT_READ) = 0
+mprotect(0x7f490f22a000, 4096, PROT_READ) = 0
+mprotect(0x555f2f034000, 4096, PROT_READ) = 0
+mprotect(0x7f490f25f000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7f490f1d3000, 125419)          = 0
+getrandom("\x8c\x2d\x19\x5b\xed\xf9\x2a\x02", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x555f30442000
+brk(0x555f30463000)                     = 0x555f30463000
+openat(AT_FDCWD, "/etc/ld.so.preload", O_RDONLY) = -1 ENOENT (No such file or directory)
+prctl(PR_GET_SECCOMP)                   = 0
+seccomp(SECCOMP_SET_MODE_STRICT, 0x1, NULL) = -1 EINVAL (Invalid argument)
+seccomp(SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_TSYNC, NULL) = -1 EFAULT (Bad address)
+seccomp(SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_LOG, NULL) = -1 EFAULT (Bad address)
+seccomp(SECCOMP_GET_ACTION_AVAIL, 0, [SECCOMP_RET_LOG]) = 0
+seccomp(SECCOMP_GET_ACTION_AVAIL, 0, [SECCOMP_RET_KILL_PROCESS]) = 0
+seccomp(SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_SPEC_ALLOW, NULL) = -1 EFAULT (Bad address)
+seccomp(SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_NEW_LISTENER, NULL) = -1 EFAULT (Bad address)
+seccomp(SECCOMP_GET_NOTIF_SIZES, 0, {seccomp_notif=80, seccomp_notif_resp=24, seccomp_data=64}) = 0
+seccomp(SECCOMP_SET_MODE_FILTER, SECCOMP_FILTER_FLAG_TSYNC_ESRCH, NULL) = -1 EFAULT (Bad address)
+brk(0x555f30484000)                     = 0x555f30484000
+brk(0x555f304a5000)                     = 0x555f304a5000
+prctl(PR_GET_SECCOMP)                   = 0
+brk(0x555f304c6000)                     = 0x555f304c6000
+brk(0x555f304e7000)                     = 0x555f304e7000
+umask(022)                              = 022
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5861584, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 5861584, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f490e800000
+close(3)                                = 0
+fcntl(0, F_GETFD)                       = 0
+fcntl(1, F_GETFD)                       = 0
+fcntl(2, F_GETFD)                       = 0
+getuid()                                = 1000
+geteuid()                               = 1000
+getgid()                                = 1000
+getegid()                               = 1000
+rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGHUP, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGTERM, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+openat(AT_FDCWD, "/home/ved/.manpath", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/man_db.conf", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=5205, ...}, AT_EMPTY_PATH) = 0
+brk(0x555f30508000)                     = 0x555f30508000
+read(3, "# man_db.conf\n#\n# This file is u"..., 4096) = 4096
+read(3, "arity, and will be concatenated "..., 4096) = 1109
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(0, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+getpid()                                = 16586
+newfstatat(AT_FDCWD, "/usr/local/sbin/less", 0x7ffe34229630, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/less", 0x7ffe34229630, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/less", {st_mode=S_IFREG|0755, st_size=207624, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2998, ...}, AT_EMPTY_PATH) = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2998
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/man-db.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/local/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/home/ved/.dotnet/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ved/.dotnet/tools/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ved/.dotnet/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ved/.dotnet/tools/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/bin/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/bin/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/man", {st_mode=S_IFREG|0755, st_size=116000, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/bin/site_perl/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/site_perl/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/man", {st_mode=S_IFREG|0755, st_size=116000, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/bin/vendor_perl/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/vendor_perl/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/man", {st_mode=S_IFREG|0755, st_size=116000, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/bin/core_perl/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/core_perl/share/man", 0x7ffe34229570, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/man", 0x7ffe342294e0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304e9250 /* 2 entries */, 32768) = 48
+getdents64(3, 0x555f304e9250 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/share/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304e9250 /* 2 entries */, 32768) = 48
+getdents64(3, 0x555f304e9250 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304e9250 /* 59 entries */, 32768) = 1600
+newfstatat(AT_FDCWD, "/usr/share/man/it.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/da.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/cs", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/sv", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ru.KOI8-R", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/de.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/id", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/hr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/zh_CN", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/fr_FR", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ru", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/it", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/sk", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/da.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/de.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/da", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/zh", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/hu", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pl.ISO8859-2", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pl.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/es", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/tr.ISO8859-9", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pt_BR", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ca@valencia", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ru.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/zh_TW", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/fr.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/fr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/uk", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ca", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/de", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/jp", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/sr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/nl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ko", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/tr.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pt", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/pt_PT", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/fr.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/sl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ro", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/ja", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/tr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/et", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/it.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+getdents64(3, 0x555f304e9250 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/jvm/default/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304e9250 /* 59 entries */, 32768) = 1600
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/it.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/da.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/cs", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/sv", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ru.KOI8-R", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/de.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/id", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/hr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/zh_CN", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/fr_FR", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ru", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/it", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/sk", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/da.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/de.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/da", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/zh", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/hu", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pl.ISO8859-2", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pl.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/es", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/tr.ISO8859-9", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pt_BR", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ca@valencia", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ru.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/zh_TW", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/fr.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/fr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/uk", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ca", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/de", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/jp", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/sr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/nl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ko", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/tr.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pt", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/pt_PT", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/fr.ISO8859-1", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/sl", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ro", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/ja", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/tr", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/et", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man/it.UTF-8", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+getdents64(3, 0x555f304e9250 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/usr/local/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/local/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/share/man", "../man", 1023) = 6
+readlink("/usr/local/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/share/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm/default", "java-11-openjdk", 1023) = 15
+readlink("/usr/lib/jvm/java-11-openjdk", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm/java-11-openjdk/man", "/usr/share/man", 1023) = 14
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/share/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/local/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/local/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/local", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/local/share/man", "../man", 1023) = 6
+readlink("/usr/local/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/share/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/share/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/man", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm/default", "java-11-openjdk", 1023) = 15
+readlink("/usr/lib/jvm/java-11-openjdk", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/jvm/java-11-openjdk/man", "/usr/share/man", 1023) = 14
+readlink("/usr", 0x7ffe342291b0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/share", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/share/man", 0x7ffe342291b0, 1023) = -1 EINVAL (Invalid argument)
+rt_sigaction(SIGHUP, NULL, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, 8) = 0
+rt_sigaction(SIGINT, NULL, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, 8) = 0
+rt_sigaction(SIGTERM, NULL, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, 8) = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304f13a0 /* 2 entries */, 32768) = 48
+getdents64(3, 0x555f304f13a0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446912, f_bavail=48535988, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/var/cache/man/oldlocal/index.db", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304f13a0 /* 59 entries */, 32768) = 1600
+getdents64(3, 0x555f304f13a0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/gconv/gconv-modules.cache", O_RDONLY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/gconv/gconv-modules", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=3916, ...}, AT_EMPTY_PATH) = 0
+read(3, "# GNU libc iconv configuration.\n"..., 4096) = 3916
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/gconv/gconv-modules.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304f13a0 /* 3 entries */, 32768) = 96
+openat(AT_FDCWD, "/usr/lib/gconv/gconv-modules.d/gconv-modules-extra.conf", O_RDONLY|O_CLOEXEC) = 4
+newfstatat(4, "", {st_mode=S_IFREG|0644, st_size=53974, ...}, AT_EMPTY_PATH) = 0
+read(4, "# GNU libc iconv configuration.\n"..., 4096) = 4096
+read(4, "B1002//\tJUS_I.B1.002//\nmodule\tJU"..., 4096) = 4096
+read(4, "59-5//\nalias\tISO_8859-5//\t\tISO-8"..., 4096) = 4096
+read(4, "59-16//\t\tINTERNAL\t\tISO8859-16\t1\n"..., 4096) = 4096
+read(4, "-SE-A\t1\nmodule\tINTERNAL\t\tEBCDIC-"..., 4096) = 4096
+read(4, "97\t\t1\n\n#\tfrom\t\t\tto\t\t\tmodule\t\tcos"..., 4096) = 4096
+read(4, "1\n\n#\tfrom\t\t\tto\t\t\tmodule\t\tcost\nal"..., 4096) = 4096
+brk(0x555f30529000)                     = 0x555f30529000
+read(4, "6//\t\tIBM1046//\nalias\tCP1046//\t\tI"..., 4096) = 4096
+read(4, "\tto\t\t\tmodule\t\tcost\nalias\tRUSCII/"..., 4096) = 4096
+read(4, "03//\nmodule\tCSN_369103//\t\tINTERN"..., 4096) = 4096
+read(4, "\tmodule\t\tcost\nalias\tISO-IR-8-1//"..., 4096) = 4096
+read(4, "IBM1156\t\t1\n\n#\tfrom\t\t\tto\t\t\tmodule"..., 4096) = 4096
+read(4, "\t\tIBM1166//\nalias\tCP1166//\t\tIBM1"..., 4096) = 4096
+read(4, "alias\tROMAN9//\t\tHP-ROMAN9//\nalia"..., 4096) = 726
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+getdents64(3, 0x555f304f13a0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+futex(0x7f490f19e98c, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/usr/share/man/man1", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=102400, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304f13a0 /* 833 entries */, 32768) = 32736
+getdents64(3, 0x555f304f13a0 /* 842 entries */, 32768) = 32752
+brk(0x555f3054a000)                     = 0x555f3054a000
+getdents64(3, 0x555f304f13a0 /* 705 entries */, 32768) = 27712
+getdents64(3, 0x555f304f13a0 /* 0 entries */, 32768) = 0
+sysinfo({uptime=18955, loads=[71296, 77312, 85632], totalram=16566968320, freeram=10481217536, sharedram=631046144, bufferram=144871424, totalswap=17179865088, freeswap=17179865088, procs=870, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man1p", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f304f13a0 /* 177 entries */, 32768) = 5800
+getdents64(3, 0x555f304f13a0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446911, f_bavail=48535987, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+openat(3, "/usr/share/man/man1/strace.1.gz", O_RDONLY) = 4
+ioctl(4, FS_IOC_FIEMAP, {fm_start=0, fm_length=4096, fm_flags=0, fm_extent_count=1} => {fm_flags=0, fm_mapped_extents=1, ...}) = 0
+close(4)                                = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", O_RDONLY) = 3
+lseek(3, 0, SEEK_CUR)                   = 0
+read(3, "\37\213\10\0\0\0\0\0\2\3\355}iw\33\307\225\350\347\364\257\250`&O\300\30\200\270h\261\344"..., 8192) = 8192
+read(3, "\254\331\263\202\250\7\261\256S]\334J5\33\275\365\224\334?\361\v&\224\341\330[\247\353\200\305\236M"..., 8192) = 8192
+read(3, "\204\247\257\v\255\337\216\216\24;\274d\253\6\33\n\20\341DN\354\231H\362'pf]58\350!"..., 8192) = 641
+read(3, "", 7551)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/var/cache/man/index.db", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4255744, ...}, AT_EMPTY_PATH) = 0
+flock(3, LOCK_SH|LOCK_NB)               = 0
+read(3, "\317\232W\23\0\20\0\0\0\20\0\0\0\0\0\0\0\20\0\0\t\0\0\0\0\20\0\0\246\0\0\0"..., 40) = 40
+read(3, "\374\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 4056) = 4056
+lseek(3, 4096, SEEK_SET)                = 4096
+read(3, "\0\300\1\0\0\0\0\0\0\300\1\0\0\0\0\0\0\320\1\0\0\0\0\0\0\320\1\0\0\0\0\0"..., 4096) = 4096
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=4255744, ...}, AT_EMPTY_PATH) = 0
+mmap(NULL, 4255744, PROT_READ, MAP_SHARED, 3, 0) = 0x7f490e200000
+munmap(0x7f490e200000, 4255744)         = 0
+flock(3, LOCK_UN)                       = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446910, f_bavail=48535986, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man8", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=36864, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f305375c0 /* 812 entries */, 32768) = 32760
+getdents64(3, 0x555f305375c0 /* 173 entries */, 32768) = 7040
+getdents64(3, 0x555f305375c0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446909, f_bavail=48535985, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446909, f_bavail=48535985, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man3", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=958464, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30541f60 /* 674 entries */, 32768) = 32720
+brk(0x555f3056b000)                     = 0x555f3056b000
+getdents64(3, 0x555f30541f60 /* 669 entries */, 32768) = 32760
+getdents64(3, 0x555f30541f60 /* 667 entries */, 32768) = 32760
+getdents64(3, 0x555f30541f60 /* 672 entries */, 32768) = 32752
+getdents64(3, 0x555f30541f60 /* 664 entries */, 32768) = 32760
+brk(0x555f3058c000)                     = 0x555f3058c000
+getdents64(3, 0x555f30541f60 /* 665 entries */, 32768) = 32744
+getdents64(3, 0x555f30541f60 /* 669 entries */, 32768) = 32736
+getdents64(3, 0x555f30541f60 /* 668 entries */, 32768) = 32760
+getdents64(3, 0x555f30541f60 /* 663 entries */, 32768) = 32752
+brk(0x555f305ad000)                     = 0x555f305ad000
+getdents64(3, 0x555f30541f60 /* 673 entries */, 32768) = 32720
+getdents64(3, 0x555f30541f60 /* 672 entries */, 32768) = 32744
+getdents64(3, 0x555f30541f60 /* 671 entries */, 32768) = 32728
+getdents64(3, 0x555f30541f60 /* 672 entries */, 32768) = 32744
+mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f490ef6c000
+getdents64(3, 0x555f30541f60 /* 669 entries */, 32768) = 32720
+getdents64(3, 0x555f30541f60 /* 664 entries */, 32768) = 32736
+getdents64(3, 0x555f30541f60 /* 670 entries */, 32768) = 32760
+brk(0x555f305ce000)                     = 0x555f305ce000
+getdents64(3, 0x555f30541f60 /* 665 entries */, 32768) = 32768
+getdents64(3, 0x555f30541f60 /* 676 entries */, 32768) = 32736
+getdents64(3, 0x555f30541f60 /* 661 entries */, 32768) = 32760
+getdents64(3, 0x555f30541f60 /* 675 entries */, 32768) = 32760
+getdents64(3, 0x555f30541f60 /* 665 entries */, 32768) = 32760
+brk(0x555f305ef000)                     = 0x555f305ef000
+getdents64(3, 0x555f30541f60 /* 662 entries */, 32768) = 32752
+getdents64(3, 0x555f30541f60 /* 669 entries */, 32768) = 32744
+getdents64(3, 0x555f30541f60 /* 666 entries */, 32768) = 32752
+getdents64(3, 0x555f30541f60 /* 658 entries */, 32768) = 32712
+mremap(0x7f490ef6c000, 135168, 266240, MREMAP_MAYMOVE) = 0x7f490ef2b000
+getdents64(3, 0x555f30541f60 /* 661 entries */, 32768) = 32744
+brk(0x555f30610000)                     = 0x555f30610000
+getdents64(3, 0x555f30541f60 /* 666 entries */, 32768) = 32768
+getdents64(3, 0x555f30541f60 /* 342 entries */, 32768) = 16544
+getdents64(3, 0x555f30541f60 /* 0 entries */, 32768) = 0
+mmap(NULL, 147456, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f490ef07000
+munmap(0x7f490ef07000, 147456)          = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man3p", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=36864, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f305ff1c0 /* 831 entries */, 32768) = 32736
+getdents64(3, 0x555f305ff1c0 /* 53 entries */, 32768) = 1992
+getdents64(3, 0x555f305ff1c0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446909, f_bavail=48535985, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man0p", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+brk(0x555f30631000)                     = 0x555f30631000
+getdents64(3, 0x555f30608930 /* 84 entries */, 32768) = 3232
+getdents64(3, 0x555f30608930 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man2", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=20480, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30608930 /* 518 entries */, 32768) = 19256
+getdents64(3, 0x555f30608930 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446908, f_bavail=48535984, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man5", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=16384, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30611720 /* 304 entries */, 32768) = 12064
+getdents64(3, 0x555f30611720 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man4", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30611720 /* 50 entries */, 32768) = 1664
+getdents64(3, 0x555f30611720 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man6", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30611720 /* 3 entries */, 32768) = 80
+getdents64(3, 0x555f30611720 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/local/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446907, f_bavail=48535983, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man/man7", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=12288, ...}, AT_EMPTY_PATH) = 0
+getdents64(3, 0x555f30611720 /* 326 entries */, 32768) = 12408
+getdents64(3, 0x555f30611720 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/share/man", O_RDONLY|O_PATH|O_DIRECTORY) = 3
+fstatfs(3, {f_type=EXT2_SUPER_MAGIC, f_bsize=4096, f_blocks=56946287, f_bfree=51446906, f_bavail=48535982, f_files=14540800, f_ffree=14258148, f_fsid={val=[0xebf6314b, 0xe167aee1]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_RELATIME}) = 0
+close(3)                                = 0
+access("/usr/share/man/man1/strace.1.gz", R_OK) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", O_RDONLY) = 3
+lseek(3, 0, SEEK_CUR)                   = 0
+read(3, "\37\213\10\0\0\0\0\0\2\3\355}iw\33\307\225\350\347\364\257\250`&O\300\30\200\270h\261\344"..., 8192) = 8192
+read(3, "\254\331\263\202\250\7\261\256S]\334J5\33\275\365\224\334?\361\v&\224\341\330[\247\353\200\305\236M"..., 8192) = 8192
+read(3, "\204\247\257\v\255\337\216\216\24;\274d\253\6\33\n\20\341DN\354\231H\362'pf]58\350!"..., 8192) = 641
+read(3, "", 7551)                       = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/cat1/strace.1.gz", 0x7ffe342294c0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+newfstatat(AT_FDCWD, "/usr/local/sbin/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/ved/.dotnet/tools/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/jvm/default/bin/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/site_perl/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/vendor_perl/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/core_perl/gpreconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/sbin/preconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/local/bin/preconv", 0x7ffe342293d0, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/bin/preconv", {st_mode=S_IFREG|0755, st_size=47112, ...}, 0) = 0
+rt_sigaction(SIGCHLD, {sa_handler=0x7f490f1af880, sa_mask=[HUP INT TERM CHLD], sa_flags=SA_RESTORER|SA_RESTART|SA_NOCLDSTOP, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+openat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", O_RDONLY) = 3
+pipe2([4, 5], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16587
+close(3)                                = 0
+close(5)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+read(4, ".\\\" Copyright (c) 1991, 1992 Pau"..., 4096) = 4096
+access("/usr/share/man/mandb_nfmt", X_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/dev/tty", O_RDONLY)  = 3
+ioctl(3, TIOCGWINSZ, {ws_row=29, ws_col=127, ws_xpixel=1918, ws_ypixel=1030}) = 0
+close(3)                                = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+newfstatat(AT_FDCWD, "/usr/share/man/man1/strace.1.gz", {st_mode=S_IFREG|0644, st_size=17025, ...}, 0) = 0
+access("/usr/share/man/man1/strace.1.gz", R_OK) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+ioctl(1, TCGETS, {B38400 opost isig icanon echo ...}) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe2([3, 5], 0)                        = 0
+pipe2([6, 7], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16588
+close(3)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe2([3, 7], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16589
+close(6)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16587, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16587
+wait4(-1, 0x7ffe34228734, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = 0
+pipe2([6, 7], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16590
+close(3)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe2([3, 7], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16591
+close(6)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe2([6, 7], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16592
+close(3)                                = 0
+close(7)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+pipe2([3, 7], 0)                        = 0
+pipe2([8, 9], 0)                        = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16593
+close(3)                                = 0
+close(9)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f490ef8da10) = 16594
+close(8)                                = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+fcntl(4, F_GETFL)                       = 0 (flags O_RDONLY)
+fcntl(4, F_SETFL, O_RDONLY|O_NONBLOCK)  = 0
+fcntl(5, F_GETFL)                       = 0x1 (flags O_WRONLY)
+fcntl(5, F_SETFL, O_WRONLY|O_NONBLOCK)  = 0
+fcntl(6, F_GETFL)                       = 0 (flags O_RDONLY)
+fcntl(6, F_SETFL, O_RDONLY|O_NONBLOCK)  = 0
+fcntl(7, F_GETFL)                       = 0x1 (flags O_WRONLY)
+fcntl(7, F_SETFL, O_WRONLY|O_NONBLOCK)  = 0
+rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigaction(SIGCHLD, NULL, {sa_handler=0x7f490f1af880, sa_mask=[HUP INT TERM CHLD], sa_flags=SA_RESTORER|SA_RESTART|SA_NOCLDSTOP, sa_restorer=0x7f490effda00}, 8) = 0
+rt_sigaction(SIGCHLD, {sa_handler=0x7f490f1af880, sa_mask=[HUP INT TERM CHLD], sa_flags=SA_RESTORER|SA_NOCLDSTOP, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "YS (To be restarted)\n--- SIGALRM"..., 4096) = 4096
+write(5, ".\\\" Copyright (c) 1991, 1992 Pau"..., 8192) = 8192
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, ".\nUsing an exclamation mark nega"..., 4096) = 4096
+write(5, ".\nUsing an exclamation mark nega"..., 4096) = 4096
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "S\n.TP 15\n.BR 1 \", \" anywhere\nno "..., 4096) = 4096
+write(5, "S\n.TP 15\n.BR 1 \", \" anywhere\nno "..., 4096) = 4096
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, "scalls that always succeed and h"..., 4096) = 4096
+write(5, "scalls that always succeed and h"..., 4096) = 4096
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "system calls.\nThe syntax of the\n"..., 4096) = 4096
+write(5, "system calls.\nThe syntax of the\n"..., 4096) = 4096
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, ". pid\nform is used if\n.B \\-ff\nop"..., 4096) = 4096
+write(5, ". pid\nform is used if\n.B \\-ff\nop"..., 4096) = 4096
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "de less than 32 or greater than "..., 4096) = 4096
+write(5, "de less than 32 or greater than "..., 4096) = 4096
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, " tracing system calls to\n.IR ove"..., 4096) = 4096
+write(5, " tracing system calls to\n.IR ove"..., 4096) = 4096
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "e within 1..\\fBSIGRTMAX\\fR range"..., 4096) = 4096
+write(5, "e within 1..\\fBSIGRTMAX\\fR range"..., 4096) = 4096
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, ".\n.IP\nSpecification of syscall i"..., 4096) = 4096
+write(5, ".\n.IP\nSpecification of syscall i"..., 4096) = 4096
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "cute it are restricted\nto those "..., 4096) = 4096
+write(5, "cute it are restricted\nto those "..., 4096) = 4096
+pselect6(7, [4 6], [5], NULL, NULL, NULL) = 2 (in [4], out [5])
+read(4, "tart the system call.\n.LP\nAs\n.B "..., 4096) = 3080
+write(5, "tart the system call.\n.LP\nAs\n.B "..., 3080) = 3080
+pselect6(8, [4 6], [5 7], NULL, NULL, NULL) = 3 (in [4], out [5 7])
+read(4, "", 4096)                       = 0
+close(4)                                = 0
+close(5)                                = 0
+pselect6(7, [6], [], NULL, NULL, NULL)  = ? ERESTARTNOHAND (To be restarted if no handler)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16588, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16588
+wait4(-1, 0x7ffe34228934, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = -1 EINTR (Interrupted system call)
+pselect6(7, [6], [], NULL, NULL, NULL)  = ? ERESTARTNOHAND (To be restarted if no handler)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16589, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16589
+wait4(-1, 0x7ffe34228934, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = -1 EINTR (Interrupted system call)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16590, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16590
+wait4(-1, 0x7ffe34228934, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = -1 EINTR (Interrupted system call)
+pselect6(7, [6], [], NULL, NULL, NULL)  = ? ERESTARTNOHAND (To be restarted if no handler)
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16591, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16591
+wait4(-1, 0x7ffe34228934, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = -1 EINTR (Interrupted system call)
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "STRACE(1)                       "..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "STRACE(1)                       "..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "be restarted)\n           --- SIG"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "be restarted)\n           --- SIG"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "ac\10ce\10e (or t\10t), a\10ab\10bb\10br\10re\10"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "ac\10ce\10e (or t\10t), a\10ab\10bb\10br\10re\10"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "ndchild in a separate process gr"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "ndchild in a separate process gr"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "  /\10/_\10r_\10e_\10g_\10e_\10x       Trace"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "  /\10/_\10r_\10e_\10g_\10e_\10x       Trace"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 2 (in [6], out [7])
+read(6, "c\10cl\10lo\10oc\10ck\10k       Trace syst"..., 4096) = 4096
+write(7, "c\10cl\10lo\10oc\10ck\10k       Trace syst"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "race system calls for which stra"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "race system calls for which stra"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "ele\342\200\220\n                   ments:"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "ele\342\200\220\n                   ments:"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "    -\10--\10-o\10ou\10ut\10tp\10pu\10ut\10t-\10-a"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "    -\10--\10-o\10ou\10ut\10tp\10pu\10ut\10t-\10-a"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "w the time spent in system calls"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "w the time spent in system calls"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 2 (in [6], out [7])
+read(6, "tion associated with file descri"..., 4096) = 4096
+write(7, "tion associated with file descri"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "duration.\n                   c\10c"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 2 (in [6], out [7])
+read(6, "                  If :p\10po\10ok\10ke"..., 4096) = 4096
+write(7, "duration.\n                   c\10c"..., 8192) = 8192
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "revious, but consider only sysca"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "revious, but consider only sysca"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "r\10rm\10ma\10at\10t:\10:c\10co\10om\10mp\10pa\10ac\10"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "r\10rm\10ma\10at\10t:\10:c\10co\10om\10mp\10pa\10ac\10"..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "            \342\224\202 s390            "..., 4096) = 4096
+pselect6(8, [6], [7], NULL, NULL, NULL) = 2 (in [6], out [7])
+read(6, "\10EI\10IN\10NT\10TR\10R return from the c"..., 4096) = 4096
+write(7, "            \342\224\202 s390            "..., 8192) = 8192
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+read(6, "    The complete list of s\10st\10tr"..., 4096) = 232
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+write(7, "    The complete list of s\10st\10tr"..., 232) = 232
+pselect6(8, [6], [7], NULL, NULL, NULL) = 1 (out [7])
+pselect6(7, [6], [], NULL, NULL, NULL)  = 1 (in [6])
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16592, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], WNOHANG, NULL) = 16592
+wait4(-1, 0x7ffe34228934, WNOHANG, NULL) = 0
+rt_sigreturn({mask=[]})                 = 1
+read(6, "", 4096)                       = 0
+close(6)                                = 0
+close(7)                                = 0
+rt_sigaction(SIGCHLD, NULL, {sa_handler=0x7f490f1af880, sa_mask=[HUP INT TERM CHLD], sa_flags=SA_RESTORER|SA_NOCLDSTOP, sa_restorer=0x7f490effda00}, 8) = 0
+rt_sigaction(SIGCHLD, {sa_handler=0x7f490f1af880, sa_mask=[HUP INT TERM CHLD], sa_flags=SA_RESTORER|SA_RESTART|SA_NOCLDSTOP, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+rt_sigaction(SIGPIPE, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 16594
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=16594, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 16594
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_KILLED, si_pid=16593, si_uid=1000, si_status=SIGPIPE, si_utime=0, si_stime=0} ---
+rt_sigreturn({mask=[]})                 = 16594
+wait4(-1, [{WIFSIGNALED(s) && WTERMSIG(s) == SIGPIPE}], WNOHANG, NULL) = 16593
+wait4(-1, 0x7ffe342293e4, WNOHANG, NULL) = -1 ECHILD (No child processes)
+rt_sigaction(SIGINT, {sa_handler=0x7f490f1fe0c0, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f490effda00}, NULL, 8) = 0
+getpid()                                = 16586
+ioctl(0, SNDCTL_TMR_START or TCSETS, {B38400 opost isig icanon echo ...}) = 0
+munmap(0x7f490ef2b000, 266240)          = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

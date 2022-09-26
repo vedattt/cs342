@@ -1,0 +1,151 @@
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+% Document quality things
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{csquotes, verbatim, listings}
+\usepackage{url, hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue}
+
+% Image-related packages
+\usepackage{graphicx}
+%\usepackage{float}
+\graphicspath{{./gfx/}}
+%\usepackage[font=small,skip=5pt]{caption}
+
+% Setting margins
+\usepackage[a4paper,bottom=2cm,top=2cm,left=2.5cm,right=2.5cm, includefoot]{geometry}
+
+% Table helper packages
+%\usepackage{multirow, multicol}
+%\usepackage{makecell}
+%\usepackage{array}
+%\usepackage{tabularx} % Not needed currently, but has a few nice options
+%\usepackage{wrapfig} % Floating figures/tables
+%\usepackage{booktabs}
+%\usepackage{catchfile}
+
+% Prevents spamming tedious newlines everywhere, also disables auto indentation, etc.
+\usepackage[skip=0.75\baselineskip plus 2pt]{parskip}
+
+% Self-explanatory
+%\usepackage{titlesec}
+%\titleformat{\section}[block]{\normalfont\scshape\Large}{\thesection}{1em}{}
+%\titleformat{\subsection}{\normalfont\large}{\thesubsection}{1em}{}
+
+% Plotting package
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+
+\begin{document}
+  \begin{center}
+    {\Large CS 342 - Operating Systems}\\
+    {\vspace{1.5em}\large Homework \#1}\\
+    {Vedat Eren Arıcan - 22002643}
+  \end{center}
+  
+  \section{Installing Linux}
+
+  I installed Ubuntu Server 22.04 on a QEMU virtual machine running on my Arch Linux system.
+  From my investigations, I found that there is minimal difference between the Desktop and Server flavors
+  for the requirements of this course. Both use the same kernel and the same kernel version,
+  and also share the same package repository. The most significant difference is that the server flavor
+  excludes bloat GUI packages such as the X server and a desktop environment, both of which can still
+  be installed on demand, but aren't vital to me at the moment.
+  I already have a personalized Linux desktop environment on my host machine.
+
+  As for the installation experience: I downloaded the ISO image through the official torrents.
+  I created a 15 GB raw disk image for QEMU. Then after mounting the installation image,
+  the rest of the process was straightforward with the provided menu.
+
+  At any rate, it is trivial to install Ubuntu at any time if needed.
+
+  \subsection{10 Linux Commands}
+
+  \begin{itemize}
+    \item \texttt{ls}: List directory
+    \item \texttt{man}: Show the manual page for given concept
+    \item \texttt{less}: A terminal pager to easily navigate outputs
+    \item \texttt{passwd}: Allows modifying user password
+    \item \texttt{sudo}: Allows running commands as another user
+    \item \texttt{modprobe}: Add/remove modules from the Linux kernel
+    \item \texttt{systemctl}: Control the system through the main \textit{systemd} utility.
+    \item \texttt{cat}: Concatenates files and prints onto standard output
+    \item \texttt{curl}: Tool for data transmission between hosts
+    \item \texttt{useradd}: Utility to interact with user information
+  \end{itemize}
+
+  \section{Linux Kernel Location}
+
+  The kernel executable resides at \texttt{/boot/vmlinuz-5.15.0-43-generic} on Ubuntu 22.04.
+
+  The output of \texttt{uname -r} is \texttt{5.15.0-43-generic}.
+
+  \section{Linux Kernel Source}
+
+  Minus the hidden files, the root directory of the kernel source contains the directories below:
+
+  \begin{verbatim}
+arch/    Documentation/  init/    LICENSES/  scripts/   usr/
+block/   drivers/        ipc/     mm/        security/  virt/
+certs/   fs/             kernel/  net/       sound/
+crypto/  include/        lib/     samples/   tools/
+  \end{verbatim}
+
+  For the 64-bit x86 architecture, the system call table is located at:\\
+  \texttt{arch/x86/entry/syscalls/syscall\_64.tbl}
+
+  The requested system call names are:
+
+  \begin{itemize}
+    \item \textbf{0:} read
+    \item \textbf{1:} write
+    \item \textbf{2:} open
+    \item \textbf{3:} close
+    \item \textbf{35:} nanosleep
+    \item \textbf{110:} getppid
+    \item \textbf{210:} io\_cancel
+  \end{itemize}
+
+  \section{The \texttt{strace} Utility}
+
+  Output for \texttt{man}:
+
+  \lstinputlisting[breaklines,basicstyle=\tiny]{dump/man.txt}
+
+  Output for \texttt{ls}:
+
+  \lstinputlisting[breaklines,basicstyle=\tiny]{dump/ls.txt}
+
+  Output for \texttt{touch}:
+  
+  \lstinputlisting[breaklines,basicstyle=\tiny]{dump/touch.txt}
+
+  \section{The \texttt{time} Utility}
+
+  The following are three distinct commands measured by \texttt{time}:\\
+  \verb+du . 0.03s user 0.22s system 45% cpu 0.549 total+\\
+  \verb+man time 0.19s user 0.10s system 7% cpu 3.991 total+\\
+  \verb+curl https://ipecho.net/plain 0.03s user 0.02s system 13% cpu 0.377 total+
+
+  The \textit{real} time is the most self-explanatory: It measures the total time passed
+  while executing the program in terms of the clock on the wall.
+  The \textit{user} and \textit{sys} are equal in characteristics, but differ in
+  the trigger for their measurement.
+  They both measure the amount of CPU time spent while executing the process,
+  but disregard the time spent waiting for "blocked" calls such as I/O events.
+  Their triggers are user-mode code (non-kernel) and kernel code, respectively.
+
+  \section{C Programming}
+
+  Source from \texttt{tree.c}:
+
+  \lstinputlisting[breaklines]{src/tree.c}
+
+  And the \texttt{Makefile}:
+
+  \lstinputlisting[breaklines]{Makefile}
+  
+\end{document}
+
