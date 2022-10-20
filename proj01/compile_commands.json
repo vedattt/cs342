@@ -26,5 +26,19 @@
     "directory": "/home/ved/projects/cs342/proj01",
     "file": "/home/ved/projects/cs342/proj01/src/pword.c",
     "output": "/home/ved/projects/cs342/proj01/obj/pword.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/tword.o",
+      "src/tword.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj01",
+    "file": "/home/ved/projects/cs342/proj01/src/tword.c",
+    "output": "/home/ved/projects/cs342/proj01/obj/tword.o"
   }
 ]
