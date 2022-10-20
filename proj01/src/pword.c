@@ -69,11 +69,7 @@ void run_child_actions(int child_count, mqd_t mqd) {
 }
 
 mqd_t open_message_queue() {
-    struct mq_attr mq_attrs = {
-        .mq_msgsize = cli_args.msg_size,
-        .mq_maxmsg = 10
-    };
-    mqd_t mqd = mq_open(MQ_NAME, O_RDWR | O_CREAT, 0660, &mq_attrs);
+    mqd_t mqd = mq_open(MQ_NAME, O_RDWR | O_CREAT, S_IRWXU | S_IRWXG, NULL);
     if (mqd == (mqd_t) -1) {
         printf("Failed to open MQ: %d\n", errno);
         exit(6);
@@ -97,14 +93,18 @@ void spawn_child_processes(mqd_t mqd) {
 struct word_count_array* await_child_processes(mqd_t mqd) {
     struct word_count_array* pair_array = init_word_count_array();
 
-    char* buf = malloc(cli_args.msg_size);
+    struct mq_attr attr;
+    mq_getattr(mqd, &attr);
+    size_t buf_size = attr.mq_msgsize;
+
+    char* buf = malloc(buf_size);
     int completed_children_count = 0;
     while (completed_children_count < cli_args.in_file_count) {
-        if (mq_receive(mqd, buf, cli_args.msg_size, NULL) == -1) {
+        if (mq_receive(mqd, buf, buf_size, NULL) == -1) {
             printf("Failed to receive message: %d\n", errno);
             exit(5);
         }
-        print_buf(buf, cli_args.msg_size, "received:");
+        print_buf(buf, buf_size, "received:");
 
         int incoming_pairs_count = *(int*)&buf[0];
         if (incoming_pairs_count == MQ_EOF_VAL) {
