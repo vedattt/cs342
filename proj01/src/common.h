@@ -3,7 +3,7 @@
 
 #include <stddef.h>
 
-#define DEBUG_LOG
+//#define DEBUG_LOG
 
 #define MAX_IN_FILE_COUNT 8
 

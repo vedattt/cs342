@@ -1,6 +1,9 @@
 obj/
+.cache/
+22002643/
 
 pword
 tword
+README.txt
 test*.txt
 

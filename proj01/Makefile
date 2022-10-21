@@ -27,5 +27,5 @@ $(OBJDIR):
 
 clean:
 	rm -f $(PWORDOBJS) $(TWORDOBJS) ./pword ./tword
-	rmdir $(OBJDIR)
+	rm -rf $(OBJDIR)
 
