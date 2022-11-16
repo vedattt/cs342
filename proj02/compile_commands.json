@@ -1,0 +1,100 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/cfs.o",
+      "src/cfs.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/cfs.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/cfs.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/generator.o",
+      "src/generator.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/generator.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/generator.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/main.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/process.o",
+      "src/process.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/process.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/process.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/scheduler.o",
+      "src/scheduler.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/scheduler.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/scheduler.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/utility.o",
+      "src/utility.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/utility.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/utility.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/workload_params.o",
+      "src/workload_params.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj02",
+    "file": "/home/ved/projects/cs342/proj02/src/workload_params.c",
+    "output": "/home/ved/projects/cs342/proj02/obj/workload_params.o"
+  }
+]
