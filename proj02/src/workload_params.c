@@ -36,7 +36,7 @@ void print_arguments(struct workload_param_store* param_store) {
             printf("\tprocesses ->\n");
             struct process_params* process_node = param_store->file_params->processes;
             while (process_node) {
-                printf("length: %d, priority: %d, iat: %d\n",
+                printf("\t\tlength: %d, priority: %d, iat: %d\n",
                         process_node->length,
                         process_node->priority,
                         process_node->interarrival_time);
@@ -48,9 +48,9 @@ void print_arguments(struct workload_param_store* param_store) {
 }
 
 enum distribution_method parse_distribution_method(char* str) {
-    if (strcmp(str, "fixed")) return FIXED_DIST;
-    if (strcmp(str, "uniform")) return UNIFORM_DIST;
-    if (strcmp(str, "exponential")) return EXPONENTIAL_DIST;
+    if (strcmp(str, "fixed") == 0) return FIXED_DIST;
+    if (strcmp(str, "uniform") == 0) return UNIFORM_DIST;
+    if (strcmp(str, "exponential") == 0) return EXPONENTIAL_DIST;
 
     printf("Invalid distribution method string: '%s'\n", str);
     exit(1);
@@ -105,6 +105,7 @@ void parse_file_arguments(struct workload_param_store* param_store, char* args[]
         node->next_process = malloc(sizeof *node->next_process);
         node->next_process->length = process_length;
         node->next_process->priority = process_priority;
+        node->next_process->next_process = NULL;
 
         if (fscanf(fp, " IAT %d", &interarrival_time) == 1) {
             node->next_process->interarrival_time = interarrival_time;
@@ -114,6 +115,8 @@ void parse_file_arguments(struct workload_param_store* param_store, char* args[]
 
         node = node->next_process;
     }
+    fclose(fp);
+
     file_params->processes = dummy_node.next_process;
 }
 
@@ -124,10 +127,12 @@ struct workload_param_store* parse_arguments(int argc, char* args[]) {
     switch (args[i++][0]) {
         case 'C':
             param_store->param_mode = WL_PARAM_COMMANDLINE;
+            param_store->file_params = NULL;
             parse_commandline_arguments(param_store, args, &i);
             break;
         case 'F':
             param_store->param_mode = WL_PARAM_FILE;
+            param_store->commandline_params = NULL;
             parse_file_arguments(param_store, args, &i);
             break;
         default:
@@ -135,6 +140,7 @@ struct workload_param_store* parse_arguments(int argc, char* args[]) {
             exit(1);
     }
 
+    param_store->common_params->output_file_name = NULL;
     if (i != argc) {
         char* output_file_name = args[i++];
         param_store->common_params->output_file_name = malloc(strlen(output_file_name) + 1);
@@ -166,19 +172,28 @@ void free_arguments(struct workload_param_store* param_store) {
                 break;
             }
     }
+
+    free(param_store);
 }
 
 struct workload_param_process_iterator init_params_iterator(struct workload_param_store* param_store) {
     struct workload_param_process_iterator iterator = {
         .param_store = param_store,
         .iteration_count = 0,
-        .next_process_params = param_store->file_params->processes
+        .next_process_params = NULL
     };
+
+    if (param_store->file_params)
+        iterator.next_process_params = param_store->file_params->processes;
+
     return iterator;
 }
 
-int has_next_process(struct workload_param_process_iterator params_iterator) {
-    return params_iterator.param_store->common_params->total_process_count != params_iterator.iteration_count;
+int has_next_process(struct workload_param_process_iterator* params_iterator) {
+    return (params_iterator->param_store->param_mode == WL_PARAM_COMMANDLINE
+        && params_iterator->param_store->common_params->total_process_count > params_iterator->iteration_count)
+        || (params_iterator->param_store->param_mode == WL_PARAM_FILE
+        && params_iterator->next_process_params);
 }
 
 int get_distributed_process_length(struct workload_param_store* param_store) {
@@ -193,6 +208,8 @@ int get_distributed_process_length(struct workload_param_store* param_store) {
                     param_store->commandline_params->min_process_length,
                     param_store->commandline_params->max_process_length);
     }
+    printf("Fell through switch\n");
+    exit(1);
 }
 
 int get_distributed_interarrival_time(struct workload_param_store* param_store) {
@@ -207,26 +224,43 @@ int get_distributed_interarrival_time(struct workload_param_store* param_store) 
                     param_store->commandline_params->min_interarrival_time,
                     param_store->commandline_params->max_interarrival_time);
     }
+    printf("Fell through switch\n");
+    exit(1);
 }
 
-struct process_params get_next_process(struct workload_param_process_iterator params_iterator) {
-    switch (params_iterator.param_store->param_mode) {
+struct process_params get_next_process(struct workload_param_process_iterator* params_iterator) {
+    struct process_params result;
+    switch (params_iterator->param_store->param_mode) {
         case WL_PARAM_COMMANDLINE:
             {
                 struct process_params random_process = {
-                    .priority = get_random_in_range(params_iterator.param_store->commandline_params->min_priority,
-                        params_iterator.param_store->commandline_params->max_priority),
-                    .length = get_distributed_process_length(params_iterator.param_store),
-                    .interarrival_time = get_distributed_interarrival_time(params_iterator.param_store)
+                    .priority = get_random_in_range(params_iterator->param_store->commandline_params->min_priority,
+                        params_iterator->param_store->commandline_params->max_priority),
+                    .length = get_distributed_process_length(params_iterator->param_store),
+                    .interarrival_time = get_distributed_interarrival_time(params_iterator->param_store)
                 };
-                return random_process;
+                result = random_process;
+                break;
             }
         case WL_PARAM_FILE:
             {
-                struct process_params* temp_node = params_iterator.next_process_params;
-                params_iterator.next_process_params = params_iterator.next_process_params->next_process;
-                return *temp_node;
+                struct process_params* temp_node = params_iterator->next_process_params;
+                params_iterator->next_process_params = params_iterator->next_process_params->next_process;
+                result = *temp_node;
+                break;
             }
     }
+    params_iterator->iteration_count++;
+
+#ifdef DEBUG_LOG
+    static int process_index = 1;
+    printf("Process %d -> length: %d, priority: %d, interarrival_time: %d\n",
+            process_index++,
+            result.length,
+            result.priority,
+            result.interarrival_time);
+#endif /* DEBUG_LOG */
+
+    return result;
 }
 

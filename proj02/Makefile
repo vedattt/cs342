@@ -10,7 +10,7 @@ OBJS=$(addprefix $(OBJDIR)/,$(subst .c,.o,$(SRCS)))
 all: cfs
 
 cfs: $(OBJS)
-	gcc $(CFLAGS) -o $@ $^
+	gcc $(CFLAGS) -o $@ $^ -lm
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	gcc $(CFLAGS) -o $@ -c $<

@@ -59,8 +59,8 @@ struct workload_param_store* parse_arguments(int argc, char* args[]);
 void free_arguments(struct workload_param_store* param_store);
 
 struct workload_param_process_iterator init_params_iterator(struct workload_param_store* param_store);
-int has_next_process(struct workload_param_process_iterator params_iterator);
-struct process_params get_next_process(struct workload_param_process_iterator params_iterator);
+int has_next_process(struct workload_param_process_iterator* params_iterator);
+struct process_params get_next_process(struct workload_param_process_iterator* params_iterator);
 
 #endif // !__GUARD_WORKLOAD_PARAMS_H
 
