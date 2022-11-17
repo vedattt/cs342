@@ -3,18 +3,18 @@
 #include "process.h"
 #include <pthread.h>
 #include <stdio.h>
+#include <unistd.h>
 
 struct runqueue* rq;
 
-int need_scheduling = 0;
+int have_running_process = 0;
+int waiting_for_new_process = 1;
 pthread_mutex_t mutex_need_scheduling;
 pthread_cond_t cond_var_need_scheduling;
+int remaining_process_count;
 
-int cpu_occupied = 0;
 pthread_mutex_t mutex_runqueue;
 
-int remaining_process_count;
-pthread_mutex_t mutex_remaining_process_count;
 
 pthread_t create_scheduler_thread(struct workload_param_store* param_store) {
     rq = runqueue_init();
@@ -23,8 +23,6 @@ pthread_t create_scheduler_thread(struct workload_param_store* param_store) {
     pthread_cond_init(&cond_var_need_scheduling, NULL);
 
     pthread_mutex_init(&mutex_runqueue, NULL);
-
-    pthread_mutex_init(&mutex_remaining_process_count, NULL);
 
     pthread_attr_t attr;
     pthread_attr_init(&attr);
@@ -48,18 +46,20 @@ void* start_scheduler_thread(void* argument) {
     remaining_process_count = workload_params->common_params->total_process_count;
     while (remaining_process_count) {
         pthread_mutex_lock(&mutex_need_scheduling);
-        while (!need_scheduling || cpu_occupied)
+        while (have_running_process || waiting_for_new_process)
             pthread_cond_wait(&cond_var_need_scheduling, &mutex_need_scheduling);
-        need_scheduling = 0;
 
-        pthread_mutex_lock(&mutex_runqueue);
+        lock_rq();
         struct process_control_block* pcb = runqueue_smallest_pcb(rq);
-        pthread_mutex_unlock(&mutex_runqueue);
+        unlock_rq();
 
         if (pcb != NULL) {
             if (workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
-                printf("selected process for CPU (pid %d)\n", pcb->pid);
+                printf("selected process for CPU (pid %d, vruntime %f)\n", pcb->pid, pcb->vruntime);
             signal_process(pcb);
+            have_running_process = 1;
+        } else {
+            waiting_for_new_process = 1;
         }
 
         pthread_mutex_unlock(&mutex_need_scheduling);
@@ -71,61 +71,61 @@ void* start_scheduler_thread(void* argument) {
     pthread_mutex_destroy(&mutex_need_scheduling);
     pthread_cond_destroy(&cond_var_need_scheduling);
     pthread_mutex_destroy(&mutex_runqueue);
-    pthread_mutex_destroy(&mutex_remaining_process_count);
     runqueue_free(rq);
     rq = NULL;
     pthread_exit(0);
 }
 
 int get_runqueue_item_count() {
-    pthread_mutex_lock(&mutex_runqueue);
+    lock_rq();
     int count = rq == NULL ? 0 : rq->count;
-    pthread_mutex_unlock(&mutex_runqueue);
+    unlock_rq();
     return count;
 }
 
 void add_pcb_to_runqueue(struct process_control_block* pcb) {
-    pthread_mutex_lock(&mutex_runqueue);
     runqueue_add_pcb(rq, pcb);
-    pthread_mutex_unlock(&mutex_runqueue);
 }
 
 void remove_pcb_from_runqueue(struct process_control_block* pcb) {
-    pthread_mutex_lock(&mutex_runqueue);
     runqueue_remove_pcb(rq, pcb);
-    pthread_mutex_unlock(&mutex_runqueue);
 }
 
 int get_timeslice_for_pcb(struct process_control_block* pcb) {
-    pthread_mutex_lock(&mutex_runqueue);
-    int timeslice = runqueue_timeslice(rq, pcb->priority);
-    pthread_mutex_unlock(&mutex_runqueue);
-    return timeslice;
+    return runqueue_timeslice(rq, pcb->priority);
 }
 
-double convert_to_vruntime_for_pcb(struct process_control_block* pcb, int actual_runtime) {
-    pthread_mutex_lock(&mutex_runqueue);
-    double vruntime = runqueue_vruntime(rq, pcb->priority, actual_runtime);
-    pthread_mutex_unlock(&mutex_runqueue);
-    return vruntime;
+void update_pcb_timings(struct process_control_block* pcb, int cpu_time) {
+    pcb->cpu_time += cpu_time;
+    pcb->vruntime += runqueue_vruntime(rq, pcb->priority, cpu_time);
 }
 
-void signal_scheduler() {
+void signal_scheduler_new_process() {
     pthread_mutex_lock(&mutex_need_scheduling);
-    need_scheduling = 1;
+    if (!have_running_process)
+        waiting_for_new_process = 0;
+    pthread_cond_signal(&cond_var_need_scheduling);
+    pthread_mutex_unlock(&mutex_need_scheduling);
+}
+
+void signal_scheduler_terminated_process() {
+    pthread_mutex_lock(&mutex_need_scheduling);
+    have_running_process = 0;
     pthread_cond_signal(&cond_var_need_scheduling);
     pthread_mutex_unlock(&mutex_need_scheduling);
 }
 
 void notify_process_termination() {
-    pthread_mutex_lock(&mutex_remaining_process_count);
+    lock_rq();
     remaining_process_count--;
-    pthread_mutex_unlock(&mutex_remaining_process_count);
+    unlock_rq();
 }
 
-void set_cpu_occupied(int occupied) {
+void lock_rq() {
     pthread_mutex_lock(&mutex_runqueue);
-    cpu_occupied = occupied;
+}
+
+void unlock_rq() {
     pthread_mutex_unlock(&mutex_runqueue);
 }
 

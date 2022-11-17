@@ -12,11 +12,15 @@ int get_runqueue_item_count();
 void add_pcb_to_runqueue();
 void remove_pcb_from_runqueue();
 int get_timeslice_for_pcb(struct process_control_block* pcb);
-double convert_to_vruntime_for_pcb(struct process_control_block* pcb, int actual_runtime);
+void update_pcb_timings(struct process_control_block* pcb, int cpu_time);
 
-void signal_scheduler();
+void signal_scheduler_new_process();
+void signal_scheduler_terminated_process();
 void notify_process_termination();
 
 void set_cpu_occupied(int occupied);
+
+void lock_rq();
+void unlock_rq();
 
 #endif // !__GUARD_SCHEDULER_H

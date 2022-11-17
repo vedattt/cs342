@@ -3,7 +3,7 @@
 
 #include "process.h"
 
-#define DEBUG_LOG
+//#define DEBUG_LOG
 
 int get_random_in_range(int range_start, int range_end);
 int get_exponential_random(int range_average, int range_start, int range_end);
