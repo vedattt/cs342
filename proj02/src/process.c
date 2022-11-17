@@ -1,5 +1,6 @@
 #include "process.h"
 #include "scheduler.h"
+#include "utility.h"
 #include "workload_params.h"
 #include <pthread.h>
 #include <stdio.h>
@@ -12,8 +13,11 @@ void* start_process_thread(void* argument) {
 
     if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
         printf("new process created (pid %d)\n", pcb->pid);
+
+    int context_switch_count = 0;
+    int arrival_time = get_time_since_t0();
     
-    while (1) {
+    while (pcb->process_length > pcb->cpu_time) {
         if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
             printf("adding pcb to runqueue (pid %d)\n", pcb->pid);
         
@@ -24,6 +28,7 @@ void* start_process_thread(void* argument) {
         while (pcb->state != PROCESS_RUNNING)
             pthread_cond_wait(&pcb->cond_var, &pcb->mutex);
 
+        set_cpu_occupied(1);
         remove_pcb_from_runqueue(pcb);
 
         int remaining_time = pcb->process_length - pcb->cpu_time;
@@ -34,22 +39,39 @@ void* start_process_thread(void* argument) {
 
         pthread_mutex_unlock(&pcb->mutex);
 
+        if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_LIGHT)
+            printf("%d %d %s %d\n", get_time_since_t0(), pcb->pid, "RUNNING", cpu_time);
+
         usleep(cpu_time * 1000);
         pcb->cpu_time += cpu_time;
         pcb->vruntime += convert_to_vruntime_for_pcb(pcb, cpu_time);
+        context_switch_count++;
+        set_cpu_occupied(0);
 
         if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
             printf("process ran out timeslice (pid %d)\n", pcb->pid);
-
-        if (pcb->process_length <= pcb->cpu_time) {
-            break;
-        }
     }
     notify_process_termination();
     signal_scheduler();
 
     if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
         printf("process is terminating (pid %d)\n", pcb->pid);
+
+    int departure_time = get_time_since_t0();
+    int turnaround_time = departure_time - arrival_time;
+    int waiting_time = turnaround_time - pcb->cpu_time; 
+
+    struct process_statistics stats = {
+        .pid = pcb->pid,
+        .arrival_time = arrival_time,
+        .departure_time = departure_time,
+        .priority = pcb->priority,
+        .cpu_time = pcb->cpu_time,
+        .waiting_time = waiting_time,
+        .turnaround_time = turnaround_time,
+        .context_switch_count = context_switch_count
+    };
+    send_process_stats(stats);
 
     pthread_mutex_destroy(&pcb->mutex);
     pthread_cond_destroy(&pcb->cond_var);

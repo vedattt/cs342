@@ -10,6 +10,7 @@ int need_scheduling = 0;
 pthread_mutex_t mutex_need_scheduling;
 pthread_cond_t cond_var_need_scheduling;
 
+int cpu_occupied = 0;
 pthread_mutex_t mutex_runqueue;
 
 int remaining_process_count;
@@ -47,8 +48,9 @@ void* start_scheduler_thread(void* argument) {
     remaining_process_count = workload_params->common_params->total_process_count;
     while (remaining_process_count) {
         pthread_mutex_lock(&mutex_need_scheduling);
-        while (!need_scheduling)
+        while (!need_scheduling || cpu_occupied)
             pthread_cond_wait(&cond_var_need_scheduling, &mutex_need_scheduling);
+        need_scheduling = 0;
 
         pthread_mutex_lock(&mutex_runqueue);
         struct process_control_block* pcb = runqueue_smallest_pcb(rq);
@@ -61,9 +63,6 @@ void* start_scheduler_thread(void* argument) {
         }
 
         pthread_mutex_unlock(&mutex_need_scheduling);
-
-        if (workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
-            printf("remaining process count: %d\n", remaining_process_count);
     }
 
     if (workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
@@ -74,12 +73,13 @@ void* start_scheduler_thread(void* argument) {
     pthread_mutex_destroy(&mutex_runqueue);
     pthread_mutex_destroy(&mutex_remaining_process_count);
     runqueue_free(rq);
+    rq = NULL;
     pthread_exit(0);
 }
 
 int get_runqueue_item_count() {
     pthread_mutex_lock(&mutex_runqueue);
-    int count = rq->count;
+    int count = rq == NULL ? 0 : rq->count;
     pthread_mutex_unlock(&mutex_runqueue);
     return count;
 }
@@ -121,5 +121,11 @@ void notify_process_termination() {
     pthread_mutex_lock(&mutex_remaining_process_count);
     remaining_process_count--;
     pthread_mutex_unlock(&mutex_remaining_process_count);
+}
+
+void set_cpu_occupied(int occupied) {
+    pthread_mutex_lock(&mutex_runqueue);
+    cpu_occupied = occupied;
+    pthread_mutex_unlock(&mutex_runqueue);
 }
 

@@ -25,6 +25,17 @@ struct process_thread_arguments {
     struct workload_param_store* workload_params;
 };
 
+struct process_statistics {
+    int pid;
+    int arrival_time;
+    int departure_time;
+    int priority;
+    int cpu_time;
+    int waiting_time;
+    int turnaround_time;
+    int context_switch_count;
+};
+
 void* start_process_thread(void*);
 
 #endif // !__GUARD_PROCESS_H

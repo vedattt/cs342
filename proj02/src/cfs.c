@@ -1,6 +1,8 @@
 #include "cfs.h"
 #include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include "utility.h"
 
 int get_weight(int priority) {
     // From the Linux kernel
@@ -63,6 +65,7 @@ int runqueue_timeslice(struct runqueue* rq, int priority) {
     }
 
     int timeslice = round(((double)weight / (double)total_weight) * SCHED_LATENCY);
+    if (total_weight == 0) timeslice = SCHED_LATENCY;
     return timeslice < MIN_GRANULARITY ? MIN_GRANULARITY : timeslice;
 }
 

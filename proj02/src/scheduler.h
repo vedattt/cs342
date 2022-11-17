@@ -17,4 +17,6 @@ double convert_to_vruntime_for_pcb(struct process_control_block* pcb, int actual
 void signal_scheduler();
 void notify_process_termination();
 
+void set_cpu_occupied(int occupied);
+
 #endif // !__GUARD_SCHEDULER_H
