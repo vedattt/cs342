@@ -49,10 +49,11 @@ void* start_process_thread(void* argument) {
             printf("process ran out timeslice (pid %d)\n", pcb->pid);
 
         pcb->state = PROCESS_READY;
+        if (pcb->process_length <= pcb->cpu_time)
+            notify_process_termination();
         signal_scheduler_terminated_process();
         pthread_mutex_unlock(&pcb->mutex);
     }
-    notify_process_termination();
 
     if (process_thread_args->workload_params->common_params->debug_output_mode == DBG_MODE_FULL)
         printf("process is terminating (pid %d)\n", pcb->pid);
