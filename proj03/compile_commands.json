@@ -1,0 +1,58 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj03",
+    "file": "/home/ved/projects/cs342/proj03/src/main.c",
+    "output": "/home/ved/projects/cs342/proj03/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/utility.o",
+      "src/utility.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj03",
+    "file": "/home/ved/projects/cs342/proj03/src/utility.c",
+    "output": "/home/ved/projects/cs342/proj03/obj/utility.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/params.o",
+      "src/params.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj03",
+    "file": "/home/ved/projects/cs342/proj03/src/params.c",
+    "output": "/home/ved/projects/cs342/proj03/obj/params.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/paging.o",
+      "src/paging.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj03",
+    "file": "/home/ved/projects/cs342/proj03/src/paging.c",
+    "output": "/home/ved/projects/cs342/proj03/obj/paging.o"
+  }
+]
