@@ -1,0 +1,16 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-g",
+      "-Wall",
+      "-c",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/ved/projects/cs342/proj04",
+    "file": "/home/ved/projects/cs342/proj04/src/main.c",
+    "output": "/home/ved/projects/cs342/proj04/obj/main.o"
+  }
+]
